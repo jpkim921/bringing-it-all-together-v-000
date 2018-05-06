@@ -17,42 +17,42 @@ describe "Dog" do
     DB[:conn].execute(sql)
   end
 
-  # describe "attributes" do
-  #   it 'has a name and a breed' do
-  #     dog = Dog.new(name: "Fido", breed: "lab")
-  #     expect(dog.name).to eq("Fido")
-  #     expect(dog.breed).to eq("lab")
-  #   end
-  #
-  #   it 'has an id that defaults to `nil` on initialization' do
-  #     expect(teddy.id).to eq(nil)
-  #   end
-  #
-  #   it 'accepts key value pairs as arguments to initialize' do
-  #     params = {id: 1, name: "Caldwell", breed: "toy poodle"}
-  #
-  #     dog = Dog.new(params)
-  #     expect(dog.name).to eq("Caldwell")
-  #     expect(dog.breed).to eq("toy poodle")
-  #   end
-  # end
-  #
-  # describe "::create_table" do
-  #   it 'creates the dogs table in the database' do
-  #     Dog.create_table
-  #     table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='dogs';"
-  #     expect(DB[:conn].execute(table_check_sql)[0]).to eq(['dogs'])
-  #   end
-  # end
-  #
-  # describe "::drop_table" do
-  #   it 'drops the dogs table from the database' do
-  #     Dog.drop_table
-  #     table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='dogs';"
-  #     expect(DB[:conn].execute(table_check_sql)[0]).to eq(nil)
-  #   end
-  # end
-  #
+  describe "attributes" do
+    it 'has a name and a breed' do
+      dog = Dog.new(name: "Fido", breed: "lab")
+      expect(dog.name).to eq("Fido")
+      expect(dog.breed).to eq("lab")
+    end
+
+    it 'has an id that defaults to `nil` on initialization' do
+      expect(teddy.id).to eq(nil)
+    end
+
+    it 'accepts key value pairs as arguments to initialize' do
+      params = {id: 1, name: "Caldwell", breed: "toy poodle"}
+
+      dog = Dog.new(params)
+      expect(dog.name).to eq("Caldwell")
+      expect(dog.breed).to eq("toy poodle")
+    end
+  end
+
+  describe "::create_table" do
+    it 'creates the dogs table in the database' do
+      Dog.create_table
+      table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='dogs';"
+      expect(DB[:conn].execute(table_check_sql)[0]).to eq(['dogs'])
+    end
+  end
+
+  describe "::drop_table" do
+    it 'drops the dogs table from the database' do
+      Dog.drop_table
+      table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='dogs';"
+      expect(DB[:conn].execute(table_check_sql)[0]).to eq(nil)
+    end
+  end
+
   # describe "#save" do
   #   it 'returns an instance of the dog class' do
   #     dog = teddy.save
