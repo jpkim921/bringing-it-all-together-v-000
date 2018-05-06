@@ -39,7 +39,7 @@ class Dog
     SQL
 
     dog = DB[:conn].execute(sql)
-    pry
+    binding.pry
   end
 
   def save
