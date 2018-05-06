@@ -95,6 +95,11 @@ class Dog
 
    dog = DB[:conn].execute(sql)
    binding.pry
+
+   if !dog.empty?
+     dog_info = dog[0]
+     dog = Dog.new_from_db(dog_info)
+   end
   #  if !song.empty?
   #    song_data = song[0]
   #    song = Song.new(song_data[0], song_data[1], song_data[2])
