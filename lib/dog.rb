@@ -58,7 +58,7 @@ class Dog
     name = dog_info[1]
     breed = dog_info[2]
     Dog.new(id, name, breed)
-    # binding.pry
+    binding.pry
   end
 
 end
