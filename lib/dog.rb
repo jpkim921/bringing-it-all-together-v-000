@@ -50,7 +50,7 @@ class Dog
     sql = <<-SQL
     SELECT *
     FROM dogs
-    WHERE id = num
+    WHERE id = #{num}
     SQL
 
     DB[:conn].execute(sql)
