@@ -37,8 +37,9 @@ class Dog
     FROM dogs
     WHERE name = #{name}
     SQL
-    
-    
+
+    dog = DB[:conn].execute(sql)
+    pry
   end
 
   def save
