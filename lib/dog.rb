@@ -36,7 +36,7 @@ class Dog
     SELECT *
     FROM dogs
     WHERE name = ?
-    LIMIT 1
+    -- LIMIT 1
     SQL
 
     # dog = DB[:conn].execute(sql)
