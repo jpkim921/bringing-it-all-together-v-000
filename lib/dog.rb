@@ -23,6 +23,11 @@ class Dog
     DB[:conn].execute("DROP TABLE IF EXISTS dogs")
   end
 
+  def save
+    
+  end
+
+
   def self.find_by_id(num)
     sql = <<-SQL
     SELECT *
