@@ -39,7 +39,8 @@ class Dog
     -- LIMIT 1
     SQL
 
-    dog = DB[:conn].execute(sql)
+    dog = DB[:conn].execute(sql).flatten
+    Dog.new_from_db(dog)
     binding.pry
   end
 
