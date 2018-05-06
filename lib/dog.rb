@@ -24,6 +24,13 @@ class Dog
     DB[:conn].execute("DROP TABLE IF EXISTS dogs")
   end
 
+  def self.new_from_db(array)
+    id = array[0]
+    name = array[1]
+    breed = array[2]
+    Dog.new(id: id, name: name, breed: breed)
+  end
+
   def save
     if self.id
       self.update
