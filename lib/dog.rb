@@ -35,11 +35,11 @@ class Dog
     sql = <<-SQL
     SELECT *
     FROM dogs
-    WHERE name = ?
+    WHERE name = name
     -- LIMIT 1
     SQL
 
-    # dog = DB[:conn].execute(sql)
+    dog = DB[:conn].execute(sql)
     binding.pry
   end
 
