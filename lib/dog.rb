@@ -25,11 +25,11 @@ class Dog
 
   def self.find_by_id(num)
     sql = <<-SQL
-    SELECT * 
-    FROM dogs 
+    SELECT *
+    FROM dogs
     WHERE id = num
     SQL
-    
+
     DB[:conn].execute(sql)
     binding.pry
   end
