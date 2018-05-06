@@ -99,6 +99,8 @@ class Dog
    if !dog.empty?
      dog_info = dog[0]
      dog = Dog.new_from_db(dog_info)
+   else
+     dog = Dog.create(name: name, breed: breed)
    end
   #  if !song.empty?
   #    song_data = song[0]
