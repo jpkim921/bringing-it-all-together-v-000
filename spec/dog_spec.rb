@@ -53,21 +53,21 @@ describe "Dog" do
     end
   end
 
-  # describe "#save" do
-  #   it 'returns an instance of the dog class' do
-  #     dog = teddy.save
-  #
-  #     expect(dog).to be_instance_of(Dog)
-  #   end
-  #
-  #   it 'saves an instance of the dog class to the database and then sets the given dogs `id` attribute' do
-  #     dog = teddy.save
-  #
-  #     expect(DB[:conn].execute("SELECT * FROM dogs WHERE id = 1")).to eq([[1, "Teddy", "cockapoo"]])
-  #     expect(dog.id).to eq(1)
-  #   end
-  # end
-  #
+  describe "#save" do
+    it 'returns an instance of the dog class' do
+      dog = teddy.save
+  
+      expect(dog).to be_instance_of(Dog)
+    end
+  
+    it 'saves an instance of the dog class to the database and then sets the given dogs `id` attribute' do
+      dog = teddy.save
+  
+      expect(DB[:conn].execute("SELECT * FROM dogs WHERE id = 1")).to eq([[1, "Teddy", "cockapoo"]])
+      expect(dog.id).to eq(1)
+    end
+  end
+  
   # describe "::create" do
   #   it 'takes in a hash of attributes and uses metaprogramming to create a new dog object. Then it uses the #save method to save that dog to the database'do
   #     Dog.create(name: "Ralph", breed: "lab")
