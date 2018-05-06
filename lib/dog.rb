@@ -36,11 +36,14 @@ class Dog
     SELECT *
     FROM dogs
     WHERE name = name
-    -- LIMIT 1
     SQL
 
     dog = DB[:conn].execute(sql).flatten
     Dog.new_from_db(dog)
+  end
+
+  def update
+    
   end
 
   def save
