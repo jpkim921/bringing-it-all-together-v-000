@@ -73,10 +73,10 @@ class Dog
     sql = <<-SQL
     SELECT *
     FROM dogs
-    WHERE id = #{num}
+    WHERE id = ?
     SQL
 
-    dog_info = DB[:conn].execute(sql).flatten
+    dog_info = DB[:conn].execute(sql, num).flatten
 
     id = dog_info[0]
     name = dog_info[1]
