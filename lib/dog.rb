@@ -102,6 +102,8 @@ class Dog
    else
      dog = Dog.create(name: name, breed: breed)
    end
+   dog
+   end
   #  if !song.empty?
   #    song_data = song[0]
   #    song = Song.new(song_data[0], song_data[1], song_data[2])
