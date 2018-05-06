@@ -38,7 +38,7 @@ class Dog
     WHERE name = #{name}
     SQL
 
-    dog = DB[:conn].execute(sql)
+    # dog = DB[:conn].execute(sql)
     binding.pry
   end
 
