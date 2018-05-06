@@ -110,11 +110,11 @@ class Dog
    sql = <<-SQL
     SELECT *
     FROM dogs
-    WHERE name = ?
-    AND breed = ?
+    WHERE name = name
+    AND breed = breed
    SQL
 
-    dog = DB[:conn].execute(sql, name, breed)
+    dog = DB[:conn].execute(sql)
     if !dog.empty?
       dog_data = dog[0]
       dog = Dog.new_from_db(dog_data)
