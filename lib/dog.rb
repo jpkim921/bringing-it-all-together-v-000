@@ -93,11 +93,11 @@ class Dog
       AND breed = breed
     SQL
 
-    dog = DB[:conn].execute(sql)
+    dog_info = DB[:conn].execute(sql)
   #  binding.pry
 
-    if !dog.empty?
-     dog_info = dog[0]
+    if !dog_info.empty?
+     dog = dog_info[0]
      dog = Dog.new_from_db(dog_info)
     else
      dog = Dog.create(name: name, breed: breed)
