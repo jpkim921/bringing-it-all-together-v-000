@@ -68,16 +68,16 @@ class Dog
     WHERE name = #{name}
     AND breed = #{breed}
     SQL
-    
+
    dog = DB[:conn].execute(sql)
-   
-   if !song.empty?
-     song_data = song[0]
-     song = Song.new(song_data[0], song_data[1], song_data[2])
-   else
-     song = self.create(name: name, album: album)
-   end
-   song
- end 
+
+  #  if !song.empty?
+  #    song_data = song[0]
+  #    song = Song.new(song_data[0], song_data[1], song_data[2])
+  #  else
+  #    song = self.create(name: name, album: album)
+  #  end
+  #  song
+ end
 
 end
