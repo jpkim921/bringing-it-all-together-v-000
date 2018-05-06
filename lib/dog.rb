@@ -75,7 +75,7 @@ class Dog
  #    WHERE name = #{name}
  #    AND breed = #{breed}
  #    SQL
- # 
+ #
  #   dog = DB[:conn].execute(sql)
  #   binding.pry
  #  #  if !song.empty?
