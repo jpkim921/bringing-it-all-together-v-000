@@ -85,26 +85,26 @@ class Dog
     # binding.pry
   end
 
- #  def self.find_or_create_by(name:, breed:)
- #    sql = <<-SQL
- #      SELECT *
- #      FROM dogs
- #      WHERE name = name
- #      AND breed = breed
- #    SQL
- #
- #    dog_values = DB[:conn].execute(sql)
- #  #  binding.pry
- #
- #    if !dog_values.empty?
- #     dog_info = dog_values[0]
- #     dog = Dog.new(id: dog_info[0], name: dog_info[1], breed: dog_info[2])
- #    else
- #     dog = self.create(name: name, breed: breed)
- #    end
- #    dog
- #    # binding.pry
- # end
+  def self.find_or_create_by(name:, breed:)
+    sql = <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE name = ?
+      AND breed = ?
+    SQL
+
+    dog_values = DB[:conn].execute(sql, name, breed)
+  #  binding.pry
+
+    if !dog_values.empty?
+     dog_info = dog_values[0]
+     dog = Dog.new_from_db(dog_info)
+    else
+     dog = self.create(name: name, breed: breed)
+    end
+    dog
+    # binding.pry
+ end
 
  # def self.find_or_create_by(name:, breed:)
  #   sql = <<-SQL
@@ -113,7 +113,7 @@ class Dog
  #    WHERE name = name
  #    AND breed = breed
  #   SQL
- # 
+ #
  #    dog = DB[:conn].execute(sql)
  #    if !dog.empty?
  #      dog_data = dog[0]
