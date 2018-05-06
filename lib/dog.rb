@@ -52,12 +52,9 @@ class Dog
     WHERE id = #{num}
     SQL
 
-    dog_info = DB[:conn].execute(sql).flatten
-
-    id = dog_info[0]
-    name = dog_info[1]
-    breed = dog_info[2]
-    # Dog.new(id, name, breed)
+    DB[:conn].execute(sql,id).map do |row|
+      self.new_from_db(row)
+    end.first
     binding.pry
   end
 
