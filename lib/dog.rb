@@ -92,10 +92,10 @@ class Dog
  #      WHERE name = name
  #      AND breed = breed
  #    SQL
- # 
+ #
  #    dog_values = DB[:conn].execute(sql)
  #  #  binding.pry
- # 
+ #
  #    if !dog_values.empty?
  #     dog_info = dog_values[0]
  #     dog = Dog.new(id: dog_info[0], name: dog_info[1], breed: dog_info[2])
