@@ -86,24 +86,14 @@ class Dog
   end
 
   def self.find_or_create_by(name:, breed:)
-    sql = <<-SQL
-      SELECT *
-      FROM dogs
-      WHERE name = name
-      AND breed = breed
-    SQL
-
-    dog_values = DB[:conn].execute(sql)
-  #  binding.pry
-
-    if !dog_values.empty?
-     dog_info = dog_values[0]
-     dog = Dog.new(id: dog_info[0], name: dog_info[1], breed: dog_info[2])
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = '#{name}' AND breed = '#{breed}'")
+    if !dog.empty?
+      dog_data = dog[0]
+      dog = Dog.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     else
-     dog = self.create(name: name, breed: breed)
+      dog = self.create(name: name, breed: breed)
     end
     dog
-    # binding.pry
- end
+  end
 
 end
