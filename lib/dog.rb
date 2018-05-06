@@ -31,6 +31,16 @@ class Dog
     Dog.new(id: id, name: name, breed: breed)
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+    SELECT *
+    FROM dogs
+    WHERE name = #{name}
+    SQL
+    
+    
+  end
+
   def save
     if self.id
       self.update
