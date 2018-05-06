@@ -103,6 +103,7 @@ class Dog
      dog = Dog.create(name: name, breed: breed)
    end
    dog
+   pry
  end
 
 end
